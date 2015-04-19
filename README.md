@@ -12,7 +12,7 @@ Each box has 4 cores, 4GB of RAM and 40GB of disk (444). The storage can be incr
 
 All of this will be automated in the future... but for now, that's how it's :).
 
-After this you should be able to access the web console on http://localhost:50070, and see one datanode
+After this you should be able to access the web console on [http://localhost:50070](http://localhost:50070), and see one datanode
 
 
 

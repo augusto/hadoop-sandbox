@@ -1,0 +1,10 @@
+127.0.0.1   localhost localhost.localdomain localhost4 localhost4.localdomain4
+::1         localhost localhost.localdomain localhost6 localhost6.localdomain6
+
+
+192.168.44.100 master master.hadoop
+192.168.44.101 slave1 slave1.hadoop
+192.168.44.102 slave2 slave2.hadoop
+192.168.44.103 slave3 slave3.hadoop
+192.168.44.104 slave4 slave4.hadoop
+192.168.44.105 slave5 slave5.hadoop

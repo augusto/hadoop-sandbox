@@ -1,0 +1,35 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+Vagrant.configure(2) do |config|
+
+  config.vm.define :master do |master|
+    master.vm.box = "chef/centos-6.5"
+    master.vm.provider "virtualbox" do |vb|
+      vb.memory = "4096"
+      vb.cpus = 4
+      vb.name = "master.hadoop"
+    end
+#    master.vm.hostname = "master.hadoop"
+    master.vm.network "forwarded_port", guest: 50070, host: 50070
+    master.vm.network "forwarded_port", guest: 8088, host: 8088
+    master.vm.network "forwarded_port", guest: 19888, host: 19888
+    master.vm.network "private_network", ip: "192.168.44.100"
+    # config.vm.synced_folder "../data", "/vagrant_data"
+    master.vm.provision "shell", path: "provision.sh"
+  end
+
+  config.vm.define :slave1 do |slave1|
+    slave1.vm.box = "chef/centos-6.5"
+    slave1.vm.provider "virtualbox" do |vb|
+      vb.memory = "4096"
+      vb.cpus = 4
+      vb.name = "slave1.hadoop"
+    end
+#    slave1.vm.hostname = "slave1.hadoop"
+    slave1.vm.network "private_network", ip: "192.168.44.101"
+    # config.vm.synced_folder "../data", "/vagrant_data"
+    slave1.vm.provision "shell", path: "provision.sh"
+  end
+
+end

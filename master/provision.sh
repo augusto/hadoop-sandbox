@@ -89,6 +89,9 @@ if ! hasExecuted $STAGE; then
   cp /vagrant/files/bin/* /home/vagrant/bin
   chown -R vagrant:vagrant /home/vagrant/bin
 
+  # need to format hdfs before starting the name node 
+  # $HADOOP_PREFIX/bin/hdfs namenode -format
+
   markExecuted $STAGE
 fi
 

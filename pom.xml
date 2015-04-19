@@ -7,31 +7,30 @@
 	<version>1.0</version>
 	<packaging>jar</packaging>
     <url>https://github.com/augusto/hadoop-sandbox</url>
+    <description>A mini distributed hadoop cluster to take with you wherever you go!</description>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		
-		<hadoop_version>2.0.0-cdh4.0.0</hadoop_version>
-		<hbase_version>0.92.1-cdh4.0.0</hbase_version>
+		<hadoop_version>2.5.2</hadoop_version>
+		<hbase_version>0.98.12-hadoop2</hbase_version>
 		<pig_version>0.9.2-cdh4.0.0</pig_version>
 		
-		<junit_version>4.8.1</junit_version>
-		<commons_io_version>2.3</commons_io_version>
 	</properties>
 
     <dependencies>
-        <!--
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
-			<version>${junit_version}</version>
+			<version>4.12</version>
 			<scope>test</scope>
 		</dependency>
 		<dependency>
 			<groupId>commons-io</groupId>
 			<artifactId>commons-io</artifactId>
-			<version>${commons_io_version}</version>
+			<version>2.4</version>
 		</dependency>
+
 		<dependency>
 			<groupId>org.apache.hadoop</groupId>
 			<artifactId>hadoop-common</artifactId>
@@ -42,23 +41,25 @@
 			<artifactId>hadoop-client</artifactId>
 			<version>${hadoop_version}</version>
 		</dependency>
+        <dependency>
+            <groupId>org.apache.hadoop</groupId>
+            <artifactId>hadoop-mapreduce-client-core</artifactId>
+            <version>${hadoop_version}</version>
+        </dependency>
+
 		<dependency>
 			<groupId>org.apache.hbase</groupId>
 			<artifactId>hbase</artifactId>
 			<version>${hbase_version}</version>
 		</dependency>
+        <!--
 		<dependency>
 			<groupId>org.apache.pig</groupId>
 			<artifactId>pig</artifactId>
 			<version>${pig_version}</version>
 		</dependency>
-		
-		<dependency>
-			<groupId>org.apache.hadoop</groupId>
-			<artifactId>hadoop-mapreduce-client-core</artifactId>
-			<version>${hadoop_version}</version>
-		</dependency>
--->
+		-->
+
 	</dependencies>
 
 	<repositories>

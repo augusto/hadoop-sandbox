@@ -10,9 +10,10 @@ Vagrant.configure(2) do |config|
       vb.cpus = 4
       vb.name = "master.hadoop"
     end
-#    master.vm.hostname = "master.hadoop"
+    master.vm.hostname = "master.hadoop"
     master.vm.network "forwarded_port", guest: 50070, host: 50070
     master.vm.network "forwarded_port", guest: 8088, host: 8088
+    master.vm.network "forwarded_port", guest: 9000, host: 9000
     master.vm.network "forwarded_port", guest: 19888, host: 19888
     master.vm.network "private_network", ip: "192.168.44.100"
     # config.vm.synced_folder "../data", "/vagrant_data"
@@ -26,7 +27,7 @@ Vagrant.configure(2) do |config|
       vb.cpus = 4
       vb.name = "slave1.hadoop"
     end
-#    slave1.vm.hostname = "slave1.hadoop"
+    slave1.vm.hostname = "slave1.hadoop"
     slave1.vm.network "private_network", ip: "192.168.44.101"
     # config.vm.synced_folder "../data", "/vagrant_data"
     slave1.vm.provision "shell", path: "provision.sh"

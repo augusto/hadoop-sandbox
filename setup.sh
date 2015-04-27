@@ -28,4 +28,4 @@ fi
 
 echo -e "\n\n"
 echo 'Run the following command to add the Hadoop bin folder to the path'
-echo '  export PATH=hadoop/bin:$PATH'
+echo "  export PATH=`pwd`/hadoop/bin:\$PATH"

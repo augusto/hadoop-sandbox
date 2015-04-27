@@ -7,3 +7,5 @@ target
 .vagrant
 ssh_key_dsa
 ssh_key_dsa.pub
+sampledata/*.bz2
+sampledata/*.csv

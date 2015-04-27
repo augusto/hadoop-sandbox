@@ -21,12 +21,16 @@ Each box has 4 cores, 4GB of RAM and 40GB of disk. The storage can be increased 
 ## How to run
 1. Run `setup.sh`. This will create a set of ssh keys to allow Hadoop to ssh to the slaves. This will also create a local instalation of Hadoop (to allow you copy files via hdfs)
 2. run `vagrant up`
-3. ssh to the master box and run `start_master.sh`
-4. ssh to each to the slaves and run `start_slave.sh`
+3. (on the first run) ssh to the master box and format the hdfs with the command `hdfs namenode -format`.
+4. ssh to the master box and run `start_master.sh`
+5. ssh to each to the slaves and run `start_slave.sh`
 
 The startup will be automated in the future, but for now it's manual :).
 
 After this you should be able to access the web console on [http://localhost:50070](http://localhost:50070), and see one datanode
+
+## Hadoop examples
+The code of the examples is taken from the great book Pro Apache Hadoop by Sameer Wadkar and Madhu Siddalingaiah (ISBN 978-1-4302-4863-7).
 
 ###TODO
 1. Create startup scripts for the master and slaves.
